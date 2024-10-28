@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .acc-head {
+          text-align: center;
+          font-size: 20px;
+          border: 5px solid rgb(3, 255, 116);
+          padding: 10px;
+          margin: 10px;
+          border-radius: 50px;
+        }
+        
+        .acc-items {
+          display: none;
+          color: rgb(223, 0, 37);
+          padding: 10px;
+          font-size: 100px;
+        }
+        
+        i {
+          position: absolute;
+          right: 25px;
+          cursor: pointer;
+        }
+       
+        </style>
+</head>
+<body>
+        
+          <div class="acc-head" onclick="fun('one', this)">Accordion 1 <i class="fa-solid fa-angle-down"></i></div>
+          <div class="acc-items" id="one">sumanth</div>
+          <div class="acc-head" onclick="fun('two', this)">
+            Accordion 2 <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="acc-items" id="two">Manu</div>
+        
+          <div class="acc-head" onclick="fun('three', this)">
+            Accordion 3 <i class="fa-solid fa-angle-down"></i>
+          </div>
+          <div class="acc-items" id="three">SUMANTH MANU</div>
+          <script>
+            function fun(id, ele) {
+              let curr = document.getElementById(id);
+              let acc = document.getElementsByClassName("acc-head");
+              let items = document.getElementsByClassName("acc-items");
+              
+              for (let i = 0; i < items.length; i++) {
+                items[i].style.display = "none";
+              }
+        
+              for (let j = 0; j < acc.length; j++) {
+                acc[j].classList.remove("active");
+              }
+        
+              if (curr.style.display === "none") {
+                curr.style.display = "block";
+                ele.classList.add("active");
+              } else {
+                curr.style.display = "none";
+                ele.classList.remove("active");
+              }
+            }
+          </script>
+        
+</body>
+</html>
